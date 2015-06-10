@@ -38,4 +38,10 @@ describe "Static pages" do
     end
   end
   
+  describe "Contact page" do
+  	it "should have the content 'contact'" do
+  		visit '/static_pages/contact'
+  		expect(page). to have_content('contact')
+  	end
+  end
 end
