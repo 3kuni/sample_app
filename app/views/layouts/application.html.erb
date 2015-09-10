@@ -5,15 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-<p>menu</p>
-<a href="home">home</a><br>
-<a href="about">about</a><br>
-<a href="help">help</a><br>
-<a href="contact">contact</a><br>
-</body>
+  <%= render 'layouts/shim' %>
+  </head>
+  <body>
+  	<%= render 'layouts/header' %>
+        <div class="container">
+          <%= link_to "sample app", '#', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home",    root_path %></li>
+              <li><%= link_to "Help",    help_path %></li>
+              <li><%= link_to "Sign in", '#' %></li>
+            </ul>
+          </nav>
+        </div>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>
